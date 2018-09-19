@@ -1,5 +1,6 @@
 // console.log('\033c');
 
+const start = new Date();
 const numSize = 2;
 const numOfLoops = 10**7;
 let maxCount = 0;
@@ -31,4 +32,5 @@ for (let i = 0; i < numOfLoops; i++) {
 
 console.log('Average:', totalCount / numOfLoops);
 console.log('Max Count:', maxCount);
+console.log('Time:', new Date() - start);
 
