@@ -6,8 +6,6 @@ const numOfLoops = 10 ** 8;
 let maxCount = 0;
 let totalCount = 0;
 
-console.log(numSize);
-
 const findNum = () => {
   const pickedNumbers = [];
   const randNumbers = [];
@@ -19,21 +17,26 @@ const findNum = () => {
     if (pickedNumbers.indexOf(num) < 0) pickedNumbers.push(num);
     // randNumbers.push(num);
   }
-  
+
   while (pickedNumbers.length < numSize) {
     getRandomNumber();
   }
-  
+
   totalCount += count;
   if (count > maxCount) maxCount = count;
   // console.log(randNumbers);
 };
 
 for (let i = 0; i < numOfLoops; i++) {
+  if (i % Math.floor(numOfLoops / 1000) === 0) {
+    console.log('\033c');
+    console.log(numSize);
+    const percent = i / (10 * Math.floor(numOfLoops / 1000));
+    console.log(`${percent}%`);
+  }
   findNum();
 }
 
-console.log(numSize);
 console.log('Average:', totalCount / numOfLoops);
 console.log('Max Count:', maxCount);
 console.log('Time:', new Date() - start);
