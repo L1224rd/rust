@@ -28,7 +28,7 @@ const findNum = () => {
 };
 
 for (let i = 0; i < numOfLoops; i++) {
-  if (i % Math.floor(numOfLoops / 1000) === 0) {
+  if (i % Math.floor(numOfLoops / 10**4) === 0) {
     console.log('\033c');
     console.log(numSize);
     const percent = i / (10 * Math.floor(numOfLoops / 1000));
