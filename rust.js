@@ -29,10 +29,14 @@ const findNum = () => {
 
 for (let i = 0; i < numOfLoops; i++) {
   if (i % Math.floor(numOfLoops / 10**4) === 0) {
+    const percent = i / (10 * Math.floor(numOfLoops / 1000));
+
     console.log('\033c');
     console.log(numSize);
-    const percent = i / (10 * Math.floor(numOfLoops / 1000));
+    console.log('');
+    console.log(totalCount / i);
     console.log(`${percent}%`);
+    console.log('');
   }
   findNum();
 }
